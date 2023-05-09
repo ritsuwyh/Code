@@ -1,0 +1,5 @@
+x=input()
+lst=list(x)
+lst.reverse()
+reversed_x=''.join(lst)
+print(reversed_x)

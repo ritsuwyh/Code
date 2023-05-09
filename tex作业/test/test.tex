@@ -1,0 +1,107 @@
+%设置编码类型和格式
+\documentclass[UTF8]{ctexart}
+%如果要引入图片 则需要引入包
+\usepackage{graphicx}
+\usepackage{tabularray}
+\usepackage{float}
+
+%在正文之前的被称为前言，需要在正文里面输入一个\maketitle才会显示出来
+\title{tex入门}
+\author{吴羽珩}
+\date{\today}
+
+% 正文
+\begin{document}
+\maketitle
+% 一个换行符只会生成一个空格 但是两个换行符就变成换一个段落
+
+
+% \includegraphics[width=0.5\textwidth]{x} %head是图片文件的名字可以省略类型 图片路径要在这个目录下
+%如果想给图片添加标题 那么可以将其嵌套在figure中 位置不对??
+\begin{figure}[H]
+    \centering%居中
+    \includegraphics[width=0.5\textwidth]{x}
+    \caption{我的头像}
+\end{figure}
+
+
+
+% 加粗文字 \textbf{}指令 
+% 斜体字 \textit{}
+% 下划线标记的文字 \underline{}
+段落1:你好1122334455667788999.
+\textbf{加粗}
+\textit{斜体}
+\underline{下划线标记}
+
+段落2:换段落
+
+
+% 章节 \section{}  最大的是part 其次是 chapter 最后是 section 平时常用section
+\section{这是第一个章节}
+正文
+%创建一个子章节或者二级章节 \subsection{}
+\subsection{这是第一个子章节}
+正文
+\subsubsection{这是一个三级章节}
+正文
+\section{这是第二个章节}
+正文
+
+
+%列表的创建: begin 和 end 之间的是一个环境 共享相同的文字格式
+%对于无序列表的创建 可以使用itemize 环境 列表中的每一个元素都需要以\item开头
+\begin{itemize}
+    \item 无序列表1
+    \item 无需列表2
+    
+\end{itemize}
+
+
+%对于有序列表的创建 我们可以使用 
+\begin{enumerate}
+    \item 有序列表1
+    \item 有序列表2
+
+\end{enumerate}
+
+%数学公式 行内公式写在两个美元符号之间 $ $
+$(x+y)^2=x^2+y^2+2xy$
+%如果想将数学公式单独放在一行
+\[
+    1+1=2
+\]
+
+
+%表格的用法
+%和图片类似 我们也可以设置居中和设置标题 只不过环境的单词不一样 位置不对?
+\begin{table}[H]%所有的这些表格 列表都必须加上[H] 
+    \centering
+    \begin{tabular}{|p{2cm}|c|r|}%c表示居中 l表示左对齐 r表示右对齐 每一列的数据需要 & 隔开 每一行的数据 \\ 分割 |c|c|c| 为表格添加竖直的边框
+        %如果想指定每一列的宽度 可以用p{列宽}
+            %使用 \hline 来实现添加横线
+        \hline
+        单元格1 & 单元格2 & 单元格3 \\
+        \hline\hline %写两次就是双横线
+        单元格4 & 单元格5 & 单元格6 \\
+        \hline
+    \end{tabular}
+
+    \caption{表格的标题}
+
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+    \hline
+     & 实际代价 & 摊还代价 \\ \hline
+    PUSH & 1 & 3 \\
+    POP & 1 & 3 \\
+    申请或释放1个位置 & 1 & 0 \\ \hline
+    \end{tabular}
+\end{table}
+
+i like\footnote[1]{我是你爹} BASIC\@. What about you?
+
+\end{document}
